@@ -47,7 +47,7 @@ rm -rf /var/lib/dpkg/info/udisks2.postinst
 echo "" >> /var/lib/dpkg/info/udisks2.postinst
 dpkg --configure -a
 apt-mark hold udisks2
-apt -y install ssh vim wget sudo 
+apt -y install ssh vim wget sudo aptitude
 apt-get install xfce4 gnome-terminal nautilus dbus-x11 tigervnc-standalone-server -y
 echo "vncserver -geometry 1280x720 -xstartup /usr/bin/startxfce4" >> /usr/local/bin/vncstart
 echo "vncserver -kill :* ; rm -rf /tmp/.X1-lock ; rm -rf /tmp/.X11-unix/X1" >> /usr/local/bin/vncstop
@@ -157,5 +157,5 @@ install_desktop
 install_extra
 adding_user
 install_theme
-sound_fix
+#sound_fix
 final_banner
