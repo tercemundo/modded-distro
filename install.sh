@@ -16,6 +16,8 @@ printf     "   ██║   ██╔══██╗██║   ██║   █�
 printf     "   ██║   ██████╔╝╚██████╔╝   ██║   \n"
 printf     "   ╚═╝   ╚═════╝  ╚═════╝    ╚═╝   \n"${W}
 printf ${Y}"                By Technical Bot\n"${W}
+
+pkg install proot-distro
 }
 
 
@@ -48,6 +50,7 @@ apt-mark hold udisks2
 apt-get install xfce4 gnome-terminal nautilus dbus-x11 tigervnc-standalone-server -y
 echo "vncserver -geometry 1280x720 -xstartup /usr/bin/startxfce4" >> /usr/local/bin/vncstart
 echo "vncserver -kill :* ; rm -rf /tmp/.X1-lock ; rm -rf /tmp/.X11-unix/X1" >> /usr/local/bin/vncstop
+echo "root:master" | chpasswd
 chmod +x /usr/local/bin/vncstart 
 chmod +x /usr/local/bin/vncstop 
 sleep 2
